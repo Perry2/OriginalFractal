@@ -1,15 +1,20 @@
 public void setup() {
+	background(255);
 	size(500, 500);
 }
 
 public void draw() {
-	shapes(200,200);
+	shapes(250,250,450);
 }
 
-public void shapes(int x, int y){
-	if(x < 10){
-		ellipse(100, 250, x-50, y-25);
-	}else{
-		shapes(x-20,y);
+public void shapes(int x, int y, int sice){
+	fill(#ccffff,127);
+	rect(x-sice, y-sice, sice, sice);
+	rect(x, y, sice, sice);
+	fill(#ffccff);
+	ellipse(x, y, sice, sice);
+	if(sice > 10){
+		shapes(x+sice/2,y,sice/2);
+		shapes(x-sice/2,y,sice/2);
 	}
 }
